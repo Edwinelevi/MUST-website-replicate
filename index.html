@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MUST Online Application Portal login and account creation interfaces.">
+  <title>MUST | Online Application Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="portal">
+    <header class="site-header">
+      <img
+        class="university-logo"
+        src="PHOTOS/must-logo.png"
+        alt="Mbarara University of Science and Technology (MUST) logo"
+        referrerpolicy="no-referrer">
+      <h1>Mbarara University of Science and<br class="desktop-break"> Technology (MUST)</h1>
+      <p class="portal-label">Online Application Portal</p>
+    </header>
+
+    <!-- Login interface -->
+    <section class="panel login-panel" id="login" aria-labelledby="login-title">
+      <div class="panel-heading">
+        <h2 id="login-title">Welcome Back</h2>
+        <p>Log in to access your application dashboard</p>
+      </div>
+
+      <form action="#" method="post">
+        <div class="form-field">
+          <label for="login-email">Email Address</label>
+          <div class="input-wrap">
+            <span class="field-icon" aria-hidden="true">✉</span>
+            <input id="login-email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="login-password">Password</label>
+          <div class="input-wrap">
+            <span class="field-icon" aria-hidden="true">▣</span>
+            <input id="login-password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+            <button class="show-password" type="button" aria-label="Show password" onclick="togglePassword('login-password', this)">◉</button>
+          </div>
+        </div>
+
+        <button class="button button-primary sign-in" type="submit">↪ Sign In</button>
+        <a class="forgot-link" href="#forgot-password">⚿ &nbsp;Forgot your password?</a>
+
+        <div class="section-divider"><span>New to the portal?</span></div>
+        <div class="login-actions">
+          <a class="button button-outline create-link" href="#create-account">♟ Create Account</a>
+          <a class="button button-muted" href="#how-to-apply">ⓘ How to Apply</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Account creation interface; opened by the Create Account link -->
+    <section class="panel create-panel" id="create-account" aria-labelledby="create-title">
+      <div class="create-heading">
+        <div>
+          <h2 id="create-title">Create Account</h2>
+          <p>Provide your details to receive a temporary password.</p>
+        </div>
+        <a class="close-button" href="#login" aria-label="Close account creation and return to login">×</a>
+      </div>
+
+      <form action="#" method="post">
+        <div class="form-field">
+          <label for="surname">Surname</label>
+          <div class="input-wrap">
+            <span class="field-icon" aria-hidden="true">♟</span>
+            <input id="surname" name="surname" type="text" placeholder="Surname" autocomplete="family-name" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="other-names">Other Names</label>
+          <div class="input-wrap">
+            <span class="field-icon" aria-hidden="true">♟</span>
+            <input id="other-names" name="other-names" type="text" placeholder="Other names" autocomplete="given-name" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Phone Number</label>
+          <div class="phone-row">
+            <select id="country-code" name="country-code" aria-label="Country calling code">
+              <option value="+256">Uganda (+256)</option>
+              <option value="+254">Kenya (+254)</option>
+              <option value="+255">Tanzania (+255)</option>
+              <option value="+250">Rwanda (+250)</option>
+            </select>
+            <div class="input-wrap phone-input">
+              <span class="field-icon" aria-hidden="true">☎</span>
+              <input id="phone" name="phone" type="tel" placeholder="0770000000" autocomplete="tel" required>
+            </div>
+          </div>
+          <small>Use an active phone number to receive notifications.</small>
+        </div>
+
+        <div class="form-field">
+          <label for="create-email">Email Address</label>
+          <div class="input-wrap">
+            <span class="field-icon" aria-hidden="true">✉</span>
+            <input id="create-email" name="email" type="email" placeholder="myemail@gmail.com" autocomplete="email" required>
+          </div>
+        </div>
+
+        <p class="email-help"><a href="#login">Don't have an Email? Click to create one</a></p>
+        <div class="create-footer">
+          <a class="button button-muted" href="#login">Close</a>
+          <button class="button button-primary" type="submit">♟ Create Account</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="site-footer">
+      <p>© Mbarara University of Science and Technology · Online Application Portal</p>
+    </footer>
+  </main>
+
+  <script>
+    function togglePassword(fieldId, button) {
+      const field = document.getElementById(fieldId);
+      const showing = field.type === "text";
+      field.type = showing ? "password" : "text";
+      button.setAttribute("aria-label", showing ? "Show password" : "Hide password");
+      button.textContent = showing ? "◉" : "◎";
+    }
+  </script>
+</body>
+</html>

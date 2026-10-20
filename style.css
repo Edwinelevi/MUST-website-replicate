@@ -1,0 +1,357 @@
+/* MUST Online Application Portal — custom student design */
+:root {
+  --ink: #151c2d;
+  --muted: #64748b;
+  --blue: #1677f9;
+  --indigo: #3734bd;
+  --indigo-dark: #2e2aa7;
+  --line: #dfe4eb;
+  --surface: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(ellipse at 52% 3%, rgba(198, 185, 255, .62), transparent 44%),
+    radial-gradient(ellipse at 8% 22%, rgba(208, 225, 255, .66), transparent 42%),
+    linear-gradient(135deg, #f1f3ff 0%, #f7f7ff 48%, #edf2fb 100%);
+}
+
+.portal {
+  width: min(100% - 32px, 960px);
+  margin: 0 auto;
+  padding: 14px 0 22px;
+  position: relative;
+}
+
+.site-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.university-logo {
+  display: block;
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  margin: 0 auto 9px;
+  border-radius: 50%;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(18px, 2.5vw, 23px);
+  line-height: 1.18;
+  letter-spacing: .15px;
+  font-weight: 850;
+}
+
+.portal-label {
+  display: inline-block;
+  margin: 12px 0 0;
+  padding: 10px 16px;
+  color: var(--indigo-dark);
+  background: rgba(112, 100, 255, .12);
+  border: 1px solid rgba(112, 100, 255, .2);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.panel {
+  width: min(100%, 520px);
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 17px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 18px 48px rgba(33, 42, 75, .10);
+  overflow: hidden;
+}
+
+.login-panel {
+  padding: 24px 22px 18px;
+}
+
+.panel-heading { margin-bottom: 22px; }
+
+.panel h2 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -.35px;
+}
+
+.panel-heading p,
+.create-heading p {
+  margin: 0;
+  color: #52688b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.form-field { margin-bottom: 18px; }
+
+.form-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input-wrap {
+  display: flex;
+  min-width: 0;
+  height: 45px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.input-wrap:focus-within {
+  border-color: #8c9cff;
+  box-shadow: 0 0 0 3px rgba(83, 94, 225, .10);
+}
+
+.field-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 43px;
+  color: #657791;
+  border-right: 1px solid var(--line);
+  font-size: 17px;
+}
+
+input, select, button { font: inherit; }
+
+.input-wrap input {
+  width: 100%;
+  min-width: 0;
+  padding: 0 12px;
+  color: var(--ink);
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 14px;
+}
+
+input::placeholder { color: #929ba7; opacity: 1; }
+
+.show-password {
+  flex: 0 0 42px;
+  border: 0;
+  background: transparent;
+  color: #657791;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+}
+
+.button:hover, .ask-misa:hover { transform: translateY(-1px); }
+.button:focus-visible, a:focus-visible, button:focus-visible {
+  outline: 3px solid rgba(22,119,249,.35);
+  outline-offset: 3px;
+}
+
+.button-primary {
+  color: #fff;
+  border: 1px solid transparent;
+  background: linear-gradient(100deg, #3d39c7, #302ca8);
+  box-shadow: 0 8px 18px rgba(54, 49, 184, .16);
+}
+
+.button-primary:hover { background: var(--indigo-dark); }
+
+.sign-in {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.forgot-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: #607391;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.forgot-link:hover, .email-help a:hover { text-decoration: underline; }
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 16px;
+  color: #9aa8be;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.section-divider::before, .section-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #e3e7ee;
+}
+
+.login-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.button-outline {
+  color: var(--blue);
+  border: 1px solid #1680ff;
+  background: #fff;
+}
+
+.button-outline:hover { background: #f4f8ff; }
+.create-link { flex: 1; }
+.button-muted {
+  color: #687585;
+  border: 1px solid #aab3bf;
+  background: #fff;
+}
+.button-muted:hover { background: #f6f8fb; }
+
+.create-panel {
+  display: none;
+  margin-top: 0;
+}
+
+.create-panel:target { display: block; }
+#login:target { display: block; }
+
+/* When the account form is targeted, show it in place of the login form. */
+body:has(#create-account:target) .login-panel { display: none; }
+body:has(#create-account:target) .create-panel { display: block; }
+body:has(#create-account:target) .portal-label { display: none; }
+body:has(#create-account:target) .site-header { margin-bottom: 16px; }
+
+.create-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 17px 17px 16px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.create-heading h2 { font-size: 16px; }
+
+.close-button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  margin-top: -3px;
+  color: #101828;
+  background: #f0f1f4;
+  border-radius: 11px;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.create-panel form { padding: 18px 17px 0; }
+.create-panel .form-field { margin-bottom: 18px; }
+.create-panel .form-field label { margin-bottom: 7px; }
+.create-panel .input-wrap { height: 44px; border-radius: 11px; }
+.create-panel .field-icon { flex-basis: 43px; }
+.phone-row { display: flex; gap: 10px; }
+.phone-row select {
+  flex: 0 0 147px;
+  width: 147px;
+  padding: 0 10px;
+  color: #3f4958;
+  border: 1px solid #cbd3df;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 13px;
+}
+.phone-input { flex: 1; }
+.form-field small {
+  display: block;
+  margin-top: 12px;
+  color: #5a6f91;
+  font-size: 12px;
+}
+.email-help {
+  margin: -8px 0 18px;
+  text-align: right;
+  font-size: 13px;
+  font-style: italic;
+}
+.email-help a { color: #0877ff; text-decoration: none; }
+.create-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 0 -17px;
+  padding: 16px 17px;
+  border-top: 1px solid #edf0f4;
+}
+.create-footer .button { min-height: 43px; }
+.create-footer .button-primary { background: linear-gradient(100deg, #1684ff, #1671ed); }
+
+.site-footer {
+  margin: 22px auto 0;
+  text-align: center;
+  color: #7b8799;
+  font-size: 11px;
+}
+
+@media (min-width: 760px) {
+  .portal { padding-top: 14px; }
+  .login-panel { padding: 24px 22px 18px; }
+}
+
+@media (max-width: 560px) {
+  .portal { width: min(100% - 20px, 520px); padding-top: 18px; }
+  .site-header { margin-bottom: 15px; }
+  .site-header h1 { font-size: 17px; }
+  .desktop-break { display: none; }
+  .university-mark { display: grid; }
+  .login-panel { padding: 22px 17px 17px; }
+  .login-actions { flex-direction: column; }
+  .login-actions .button { width: 100%; }
+  .phone-row { gap: 7px; }
+  .phone-row select { flex-basis: 128px; width: 128px; padding: 0 5px; font-size: 12px; }
+  .assistant { right: 12px; bottom: 75px; width: min(260px, calc(100vw - 48px)); }
+  .ask-misa { right: 12px; bottom: 14px; min-height: 46px; }
+  .site-footer { padding-bottom: 62px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
